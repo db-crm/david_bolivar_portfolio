@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Bolivar — Systems Analyst & Applications Developer</title>
+<meta name="description" content="Systems analyst and applications developer. ERP administration, BI reporting, and internal applications — 20+ in production at the City of Rocky Mount.">
+<meta property="og:title" content="David Bolivar — Systems Analyst & Applications Developer">
+<meta property="og:description" content="I build the systems that let organizations see their own data. 20+ BI reports and applications in production.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%232F6F5E%22/><text x=%2250%22 y=%2268%22 font-size=%2252%22 font-family=%22sans-serif%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22>DB</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#181C22;
+  --ink-soft:#5C6670;
+  --paper:#FCFCFB;
+  --line:#E4E6E6;
+  --wash:#F5F5F3;
+  --accent:#2F6F5E;
+  --accent-soft:#E4EFEB;
+  --sans:'Inter', system-ui, sans-serif;
+  --display:'Space Grotesk', var(--sans);
+  --mono:'IBM Plex Mono', ui-monospace, monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:17px}
+.wrap{max-width:900px;margin:0 auto;padding:0 28px}
+@media (min-width:1200px){.wrap{max-width:1020px}}
+@media (min-width:1600px){.wrap{max-width:1100px}body{font-size:17.5px}}
+a{color:var(--accent);text-decoration-color:var(--accent-soft);text-underline-offset:3px}
+a:hover{text-decoration-thickness:1.5px;text-decoration-color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+header{padding:24px 0 0}
+.hd{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.hd .name{font-family:var(--display);font-weight:700;font-size:1.08rem;letter-spacing:-.01em}
+.hd nav{font-size:.92rem}
+.hd nav a{color:var(--ink-soft);text-decoration:none;margin-left:22px}
+.hd nav a:hover{color:var(--ink)}
+
+.hero{padding:44px 0 8px}
+.hero h1{
+  font-family:var(--display);font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(1.95rem,4.3vw,2.8rem);line-height:1.18;max-width:20ch;min-height:3.6em;
+}
+.hero h1 .accent{color:var(--accent)}
+.hero h1 .accent.typing::after{
+  content:"";display:inline-block;width:2px;height:.95em;background:var(--accent);
+  margin-left:3px;vertical-align:-.12em;animation:blink 1s step-end infinite;
+}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.hero h1 .accent.typing::after{display:none}}
+@media (min-width:1000px){
+  .hero{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:start;padding-top:52px}
+  .hero h1{grid-column:1;margin:0}
+  .hero .heroside{grid-column:2;padding-top:6px}
+  .hero .tags{grid-column:1 / -1}
+}
+.hero p{margin-top:20px;color:var(--ink-soft);max-width:64ch;font-size:1.1rem;line-height:1.7}
+.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.hero .tags span{
+  font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);
+  border:1px solid var(--line);padding:5px 11px;border-radius:100px;
+}
+
+section{padding:44px 0 0;scroll-margin-top:24px}
+h2{
+  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);
+  border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:32px;
+}
+
+.case{margin-bottom:44px}
+.case{margin-bottom:0;padding:38px 0;border-top:1px solid var(--line);scroll-margin-top:24px}
+.case:first-of-type{border-top:none;padding-top:0}
+.case .idx{font-family:var(--mono);font-size:.72rem;color:var(--accent);display:block;margin-bottom:8px}
+.case h3{font-family:var(--display);font-size:1.28rem;font-weight:600;line-height:1.35;letter-spacing:-.01em}
+.case .meta{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);margin:7px 0 13px}
+.case p{margin-bottom:10px;max-width:70ch}
+.case p b{font-weight:700}
+.case p.short{color:var(--ink-soft)}
+code{font-family:var(--mono);background:var(--wash);padding:1px 6px;border-radius:4px;font-size:.88em}
+.stackline{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);margin-top:9px}
+
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0 8px}
+.statgrid .stat{background:var(--wash);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.statgrid .stat .n{font-family:var(--display);font-weight:600;font-size:1.15rem;color:var(--accent)}
+.statgrid .stat .l{font-size:.8rem;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+.carousel{margin:18px 0 6px}
+.cslides{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--wash);
+  aspect-ratio:16/9;overflow:hidden}
+.cslide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;display:flex}
+.cslide.active{opacity:1;position:relative}
+.cslide img{width:100%;height:100%;object-fit:contain;display:block}
+.cslide .slot{border:none;border-radius:0;width:100%;display:flex;align-items:center;justify-content:center;
+  background:transparent;padding:0}
+@media (prefers-reduced-motion: reduce){.cslide{transition:none}}
+.cdots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.cdot{width:7px;height:7px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0}
+.cdot.active{background:var(--accent);width:18px;border-radius:4px;transition:width .2s ease}
+.cdot:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:16px 0 10px}
+.gallery .slot{padding:34px 12px;font-size:.7rem}
+.diagram{margin:18px 0 8px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:14px}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram .cap{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);margin-top:8px;text-align:center}
+.media{margin:16px 0 4px}
+.media video,.media img{max-width:100%;border:1px solid var(--line);border-radius:8px;display:block}
+.media .cap{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);margin-top:6px}
+.slot{
+  border:1px dashed var(--line);border-radius:8px;padding:26px 18px;
+  font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);text-align:center;background:var(--wash);
+}
+
+.note{background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:26px 28px 22px}
+.note h3{font-family:var(--display);font-size:1.2rem;font-weight:600;margin-bottom:5px;letter-spacing:-.01em}
+.note .meta{font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);margin-bottom:14px}
+.note p{margin-bottom:10px;max-width:70ch}
+.note p b{font-weight:700}
+.todo{color:#8A6D1F;background:#FBF3DC;border-radius:4px;padding:1px 6px;font-size:.9em}
+.note .todo{color:#8A6D1F;background:#FBF3DC;border-radius:4px;padding:1px 6px;font-size:.85em}
+
+.lead{max-width:66ch;color:var(--ink-soft);margin-bottom:22px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.pcard h4{font-family:var(--display);font-size:1.02rem;font-weight:600;margin-bottom:8px}
+.pcard p{font-size:.94rem;color:var(--ink-soft);margin-bottom:12px}
+.ptags{display:flex;flex-wrap:wrap;gap:6px}
+.ptags span{font-family:var(--mono);font-size:.68rem;color:var(--ink-soft);border:1px solid var(--line);padding:3px 9px;border-radius:100px}
+
+.ops p{max-width:70ch;margin-bottom:10px;color:var(--ink-soft)}
+
+footer{padding:56px 0 64px}
+footer .contact{font-family:var(--display);font-size:1.3rem;font-weight:600;margin-bottom:9px}
+footer .links{font-size:.94rem}
+footer .links a{margin-right:18px;color:var(--ink-soft);text-decoration:none}
+footer .links a:hover{color:var(--accent)}
+footer .fine{font-size:.82rem;color:var(--ink-soft);margin-top:24px;max-width:60ch}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="hd">
+    <span class="name">David Bolivar</span>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#note">Notes</a>
+      <a href="#personal">Personal</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <h1>I build the systems that let organizations <span class="accent">see their own data.</span></h1>
+  <div class="heroside">
+  <p>Systems analyst and applications developer at the City of Rocky Mount, NC. I administer
+  the City's Tyler MUNIS ERP and its surrounding systems, and build the reporting, internal
+  applications, and integrations around them — 20+ BI reports and applications currently in production, taken
+  end to end: requirements, development, integration, deployment, administration.</p>
+  </div>
+  <div class="tags">
+    <span>Python</span><span>Django / Flask</span><span>SQL Server</span><span>Power BI</span><span>SSRS / SSIS</span><span>REST APIs</span><span>Docker</span><span>Proxmox</span>
+  </div>
+</div>
+
+<section class="wrap" id="work">
+  <h2>Selected work</h2>
+
+  <article class="case">
+    <span class="idx">01</span>
+    <h3>CRM Central: access governance for the City's core systems</h3>
+    <div class="meta">City of Rocky Mount · sole developer · 2024 – present · feature-complete, pre-production</div>
+    <p><b>Problem.</b> Access to the City's two Tyler ERPs — MUNIS and CIS Infinity — was requested
+    through DocuSign envelopes and free-text PDF forms. Nobody could see what access an employee
+    already had, requests were ambiguous because roles were typed rather than picked, audit records
+    were fragmented across envelopes, and nothing tracked the lifecycle end to end. There was no
+    deprovisioning trigger at all: the application's first automated account scan found seven former
+    employees still holding active ERP accounts.</p>
+    <p><b>Build.</b> A Django 5 application giving directors live read-only visibility into their
+    employees' real MUNIS and CIS access, structured request wizards that pick from the actual role
+    catalogs, and a four-stage approval workflow (director → analyst → PM supervisor →
+    implementation). Requests are snapshotted at submission, so in-flight approvals are immune to
+    later admin changes — approvers always see exactly what was submitted. Zendesk tickets are
+    created automatically, and new-hire requests park until IT provisions the AD account, then
+    resume on their own. Every state change lands in an append-only audit log rendered as a
+    per-request timeline: the compliance artifact that replaces the DocuSign envelope.</p>
+    <p><b>Engineering decisions.</b> Boring on purpose — no SPA, no Celery, no Redis. Asynchronous
+    work runs on database-as-queue patterns instead: a transactional email outbox (which removed
+    roughly 15 seconds of latency per submission that synchronous SMTP had been adding) and an
+    event-relay table drained by a single worker using compare-and-swap claiming with retries and
+    failure auditing. Row locks and idempotency guards closed real races a security audit
+    surfaced — double approvals creating duplicate tickets, events reprocessing. That audit also
+    drove fixes for an IDOR flaw, stored XSS coming in through ERP strings, and secrets hygiene.
+    Integrations have zero inbound HTTP surface: Power Automate writes to a database table rather
+    than calling a webhook. And because CIS runs on SQL Server 2014, which negotiates only TLS 1.0
+    and 1.1, the connection required FreeTDS with a documented OpenSSL security-level adjustment —
+    modern ODBC drivers simply refuse the handshake.</p>
+    <p><b>Structure.</b> Four Django apps with clear ownership: <code>core</code> (users, departments,
+    audit, dashboards), <code>directory</code> (the service layer owning all external SQL),
+    <code>requests</code> (workflow engine, form builder, Zendesk client, notification outbox), and
+    <code>org_chart</code> (a D3.js drag-and-drop org-chart builder plus a structurally isolated HR
+    directory).</p>
+    <p><b>Status.</b> All ten planned development phases are implemented, verified end to end, and
+    committed — core platform through CIS integration, the org-chart builder, automated new-hire
+    provisioning, and admin observability (worker health, system-health dashboard, per-request
+    timelines) — plus the security audit and four rounds of UX refinement. Feature-complete and
+    code-hardened; remaining work is deployment and operations — credential rotation, least-privilege
+    service accounts, production seeding — not development.</p>
+    <div class="diagram" role="img" aria-label="CRM Central architecture: the app writes only to its own database and reads MUNIS and CIS read-only; Zendesk is reached via API and Power Automate.">
+      <svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#5C6670"/>
+          </marker>
+        </defs>
+        <!-- app -->
+        <rect x="235" y="20" width="170" height="64" rx="8" fill="#E4EFEB" stroke="#2F6F5E" stroke-width="1.5"/>
+        <text x="320" y="46" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#181C22">CRM Central</text>
+        <text x="320" y="66" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">Django · workflow engine</text>
+        <!-- app db -->
+        <rect x="250" y="160" width="140" height="52" rx="8" fill="#fff" stroke="#2F6F5E" stroke-width="1.5"/>
+        <text x="320" y="182" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">App database</text>
+        <text x="320" y="199" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#2F6F5E">read / write · audited</text>
+        <line x1="320" y1="84" x2="320" y2="158" stroke="#2F6F5E" stroke-width="1.5" marker-end="url(#ar)"/>
+        <!-- munis -->
+        <rect x="20" y="160" width="150" height="52" rx="8" fill="#F5F5F3" stroke="#E4E6E6"/>
+        <text x="95" y="182" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">MUNIS ERP db</text>
+        <text x="95" y="199" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">read-only · cached</text>
+        <line x1="262" y1="84" x2="110" y2="158" stroke="#5C6670" stroke-width="1.2" stroke-dasharray="5 4" marker-start="url(#ar)"/>
+        <!-- cis -->
+        <rect x="470" y="160" width="150" height="52" rx="8" fill="#F5F5F3" stroke="#E4E6E6"/>
+        <text x="545" y="182" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">CIS billing db</text>
+        <text x="545" y="199" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">read-only · cached</text>
+        <line x1="378" y1="84" x2="530" y2="158" stroke="#5C6670" stroke-width="1.2" stroke-dasharray="5 4" marker-start="url(#ar)"/>
+        <!-- zendesk -->
+        <rect x="500" y="26" width="120" height="52" rx="8" fill="#fff" stroke="#E4E6E6"/>
+        <text x="560" y="48" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">Zendesk</text>
+        <text x="560" y="65" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">tickets · API</text>
+        <line x1="405" y1="52" x2="498" y2="52" stroke="#5C6670" stroke-width="1.2" marker-end="url(#ar)"/>
+      </svg>
+      <div class="cap">Writes go only to the app's own database; both systems of record are wired read-only.</div>
+    </div>
+    <div class="media">
+      <!-- <video autoplay loop muted playsinline preload="metadata" aria-label="Access request workflow demo">
+             <source src="media/access-workflow.webm" type="video/webm">
+             <source src="media/access-workflow.mp4" type="video/mp4">
+           </video>
+           <div class="cap">Request → approval chain → provisioning. Dev environment, test data.</div> -->
+      <div class="slot">15-second clip: request → approval → provisioning · dev environment, test data</div>
+    </div>
+    <div class="stackline">Django 5 · HTMX · Alpine.js · Tailwind · SQL Server · Docker · Zendesk · Power Automate</div>
+  </article>
+
+  <article class="case">
+    <span class="idx">02</span>
+    <h3>Reverse-engineering 560 undocumented security roles — and proving the redesign lost nothing</h3>
+    <div class="meta">City of Rocky Mount · sole analyst / developer · 2026 · analysis complete, migration pending</div>
+    <p><b>Problem.</b> A supervisor review concluded that MUNIS's security roles had to be
+    overhauled before CRM Central could go live — governing access is meaningless if the underlying
+    roles are incoherent. The catalog had never been documented, and MUNIS offers no table or screen
+    that lists what a role actually grants. Nobody had tackled it because there was no dataset to
+    tackle it with.</p>
+    <p><b>Building the dataset.</b> The system's only complete self-description is a 3,045-page PDF
+    report. Standard text extraction silently corrupted column alignment, so I parsed it on word
+    coordinates instead (pdfplumber clustering), producing a validated four-table dataset: 560 roles,
+    87,863 permission grants, 11,641 data-access settings, 6,511 user assignments — every page
+    attributed, zero unmatched lines. An independently written recount script — deliberately
+    checking the raw report rather than my pipeline's internals — caught a real parser bug where a
+    page-break header quirk was silently dropping about 37,000 permission rows. That check existed
+    because the analysis was worthless if the extraction was quietly wrong.</p>
+    <p><b>What the data showed.</b> 27% of roles (153) granted access to nobody active. 121 roles
+    were held by exactly one person. 65% of all assignments belonged to disabled accounts. Roughly
+    300 roles turned out to be data-scope variants of a handful of templates, clustering into 43
+    near-duplicate families. Some roles were named after individual people — including one person's
+    private role created twice under different spellings, and a role named after one employee that
+    was actually held by someone else.</p>
+    <p><b>The redesign.</b> I adopted Tyler's official RBAC taxonomy — separating functional, job,
+    data-scope, and workflow roles — with local deviations documented, and wrote it up as a
+    governance standard so the old patterns can't regrow: capability and data scope never mix in one
+    role, job bundles require at least three holders, no person-named roles, no account copying, and
+    every role needs a description a director can actually read. The candidate catalog of 442 roles
+    was derived from the data rather than a whiteboard, using cluster-core extraction with a
+    similarity threshold chosen empirically for least privilege — looser merging was tested and
+    rejected because it silently granted 500+ capabilities nobody held. All 560 legacy roles were
+    mapped to exactly one disposition: retire, merge, split, or human review, with full accounting.</p>
+    <p><b>The proof.</b> I computed every enabled user's effective access before and after the
+    redesign: <b>zero capability or scope loss across all 235 users</b> — a re-runnable result,
+    independently re-verified by a 32-check sanity script written against the raw data. A separate
+    vocabulary audit of all 83 distinct permission-value strings caught partial-access values that
+    had been misclassified as denials (a masked-SSN inquiry view reads as restriction but is real
+    access), which would have silently dropped roughly 800 genuine grants — including
+    privacy-masked HR views — at build time. The redesign also surfaced a segregation-of-duties
+    exposure the legacy catalog had structurally hidden: users holding both entry and manage rights
+    across multiple financial modules.</p>
+    <p><b>Getting it approved.</b> Business owners can't sign off on a spreadsheet of 560 rows, so I
+    built a self-contained static review app — no server, so sensitive data never leaves the internal
+    network — showing role-by-role and user-by-user before/after comparisons, department rollups,
+    consolidation scenarios with explicit over-grant "price tags," and in-app decision capture. It
+    doubles as the UX prototype for CRM Central's future role-governance pages.</p>
+    <p><b>Status.</b> Analysis, design, coverage proof, and review tooling complete; briefing and
+    owner review packets prepared. Migration is deliberately gated on leadership sign-off — not yet
+    executed.</p>
+    <div class="statgrid">
+      <div class="stat"><div class="n">560 → 442</div><div class="l">roles, with 153 proven safe to retire</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">access lost across 235 users — computed and re-verified</div></div>
+      <div class="stat"><div class="n">~800</div><div class="l">real grants rescued by the vocabulary audit</div></div>
+      <div class="stat"><div class="n">3,045 pp</div><div class="l">vendor report → validated dataset, 100% attributed</div></div>
+    </div>
+    <div class="media">
+      <div class="slot">Screenshot: review tool showing before/after role comparison (redacted)</div>
+    </div>
+    <div class="stackline">Python · pdfplumber · SQLite · SQL Server · RBAC design · segregation-of-duties analysis</div>
+  </article>
+
+  <article class="case">
+    <span class="idx">03</span>
+    <h3>Business intelligence: dashboards and reporting across the City</h3>
+    <div class="meta">City of Rocky Mount · report developer / analyst · 2022 – present · in production</div>
+    <p><b>Problem.</b> Departments ran on data they couldn't see. Finance, Business &amp; Collections,
+    HR, and management each needed a different view of the same systems, and getting it meant asking
+    someone to pull a report by hand.</p>
+    <p><b>Build.</b> 20+ production Power BI dashboards and SSRS reports built directly against the
+    City's SQL Server sources, with SSIS pipelines feeding a reporting database — self-service views
+    that answer the recurring questions without a ticket.</p>
+    <p><b>Outcome.</b> Departments that previously had no consolidated view of their own data now use
+    these tools for day-to-day decisions.</p>
+    <div class="carousel" id="bi-carousel">
+      <div class="cslides">
+        <div class="cslide active"><img src="media/vendor-spend.png" alt="Vendor Spend dashboard — invoice-based vendor spend by department, fiscal year, and top vendors"></div>
+        <div class="cslide"><img src="media/overtime.png" alt="Overtime Analysis dashboard — OT paid, hours, and percent of payroll by department and pay code"></div>
+        <div class="cslide"><img src="media/active-employee-pay.png" alt="Active Employee & Pay Info dashboard — pay ranges by department, division, and position"></div>
+        <div class="cslide"><img src="media/account-actuals-revenues.png" alt="Account Actuals dashboard — Revenues by fiscal year and fund"></div>
+        <div class="cslide"><img src="media/account-actuals-expenses.png" alt="Account Actuals dashboard — Expenses by fiscal year and fund"></div>
+        <div class="cslide"><img src="media/account-actuals-rev-vs-exp.png" alt="Account Actuals dashboard — Revenue vs Expense by fund group"></div>
+        <div class="cslide"><img src="media/delinquency-property-tax.png" alt="Delinquency Overview dashboard — Property Tax (Real Estate & Personal) delinquency"></div>
+        <div class="cslide"><img src="media/delinquency-loans-assessments.png" alt="Delinquency Overview dashboard — Loans & Assessments delinquency"></div>
+        <div class="cslide"><img src="media/delinquency-grand-totals.png" alt="Delinquency Overview dashboard — Grand Totals billed, collected, and collection rate by year"></div>
+      </div>
+      <div class="cdots">
+        <button class="cdot active" data-i="0" aria-label="Show Vendor Spend dashboard"></button>
+        <button class="cdot" data-i="1" aria-label="Show Overtime Analysis dashboard"></button>
+        <button class="cdot" data-i="2" aria-label="Show Active Employee & Pay Info dashboard"></button>
+        <button class="cdot" data-i="3" aria-label="Show Account Actuals — Revenues"></button>
+        <button class="cdot" data-i="4" aria-label="Show Account Actuals — Expenses"></button>
+        <button class="cdot" data-i="5" aria-label="Show Account Actuals — Revenue vs Expense"></button>
+        <button class="cdot" data-i="6" aria-label="Show Delinquency — Property Tax"></button>
+        <button class="cdot" data-i="7" aria-label="Show Delinquency — Loans & Assessments"></button>
+        <button class="cdot" data-i="8" aria-label="Show Delinquency — Grand Totals"></button>
+      </div>
+    </div>
+    <p class="short"><span class="todo">[David: one short caption per dashboard — what it shows and
+    who uses it. e.g. "Encumbrance and budget-vs-actual view used by Finance during monthly close."]</span></p>
+    <div class="stackline">Power BI · DAX · SSRS · SSIS · SQL Server</div>
+  </article>
+
+  <article class="case">
+    <span class="idx">04</span>
+    <h3>Nexus: an on-premises AI knowledge base where data never leaves the network</h3>
+    <div class="meta">City of Rocky Mount · co-built with a colleague · 2026 · core pipeline built and tested</div>
+    <p><b>Problem.</b> Technology Services runs on tribal knowledge — fixes, procedures, vendor
+    records, and policy live in people's heads, scattered notes, and OneNote. When someone is out
+    or leaves, the knowledge leaves with them, and the same problems get re-solved from scratch.
+    SaaS knowledge tools were never an option: the content includes credentials, contracts, and PII
+    that can't be sent to a third-party cloud or LLM API.</p>
+    <p><b>Build.</b> Staff fill in a short structured capture form — one of four article types
+    (Troubleshooting, SOP, Reference Record, Policy) — and a locally hosted model, Qwen3 14B on
+    Ollama, drafts a well-structured article from it. Nothing publishes automatically: a human
+    reviews and approves every draft in a three-column review interface before it goes live. Each
+    article type is defined by exactly three artifacts — a capture form, a prompt, and a render
+    template — so a new type is configuration, not a pipeline change.</p>
+    <p><b>Permission enforcement.</b> RBAC with four roles and a division model on top; every
+    article carries public, division, or private visibility plus explicit per-user grants. The
+    entire application reads through one gateway function, <code>get_allowed_articles(user)</code> —
+    raw model access is banned by convention — so the same permission logic governs browsing,
+    search, and, later, RAG retrieval. Unauthorized access returns 404, not 403, so the app never
+    reveals that restricted content exists.</p>
+    <p><b>Guarding against the AI itself.</b> Prompts are forbidden from inventing facts — where
+    input is missing, the model must emit an explicit placeholder rather than a plausible-sounding
+    guess — and a server-side gate blocks publishing until every placeholder is resolved. An
+    <code>ai_edit_distance</code> metric tracks how much humans rewrite each draft, which is the
+    signal for which prompts need tuning.</p>
+    <p><b>What's built vs. what's next.</b> The full capture-to-publish pipeline works end to end
+    for all four article types, on top of a hand-built design system with light/dark theming and
+    roughly 200 tests. Real semantic search — chunking, embeddings, and hybrid pgvector + full-text
+    retrieval — and the permission-aware RAG chat assistant are the next phase, not yet built.
+    The adoption bar we set: two real users, daily, for two weeks, before department-wide rollout.</p>
+    <div class="statgrid">
+      <div class="stat"><div class="n">0</div><div class="l">bytes of municipal data leave the network</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">article types, each config, not code</div></div>
+      <div class="stat"><div class="n">~200</div><div class="l">tests across Python and JS suites</div></div>
+    </div>
+    <div class="media">
+      <div class="slot">Screenshot: capture form or three-column AI review interface (redacted)</div>
+    </div>
+    <div class="stackline">Django 5 · HTMX · Alpine.js · PostgreSQL + pgvector · Redis · Celery · Ollama (Qwen3 14B) · Docker</div>
+  </article>
+
+  <article class="case">
+    <span class="idx">05</span>
+    <h3>Outreach automation for a student information system with no API</h3>
+    <div class="meta">NC Wesleyan University · sole developer · 2025 – present · in production</div>
+    <p><b>Problem.</b> Advising staff logged every student contact into Jenzabar J1 by hand —
+    slow, error-prone, and impossible to prioritize across hundreds of students.</p>
+    <p><b>Build.</b> A Selenium/Flask tool that records communications into J1 automatically
+    (browser automation where no API exists), plus scan logic with cooldown, flag, and
+    do-not-contact rules, and a dashboard staff use to decide who to reach next.</p>
+    <p><b>Outcome.</b> Logging that consumed staff hours now happens automatically; outreach
+    priorities come from the dashboard instead of memory.</p>
+    <div class="media">
+      <div class="slot">Screenshot or short clip: dashboard with synthetic student data</div>
+    </div>
+    <div class="stackline">Python · Selenium · Flask · Jenzabar J1</div>
+  </article>
+
+  <article class="case">
+    <span class="idx">06</span>
+    <h3>Public-safety API integrations</h3>
+    <div class="meta">City of Rocky Mount · integration lead · Nov 2024 – Feb 2025 · delivered</div>
+    <p class="short">Led REST API integration work connecting the City's computer-aided dispatch
+    and records-management systems with third-party platforms — police body-worn cameras,
+    citizen-feedback surveys, and predictive patrol deployment. Mapped data models, coordinated
+    vendor requirements, validated the exchanges end to end.</p>
+    <div class="stackline">REST APIs · CAD/RMS · vendor coordination</div>
+  </article>
+
+  <article class="case">
+    <span class="idx">07</span>
+    <h3>Tyler Time &amp; Attendance (ExecuTime) upgrade — 1,200+ employees</h3>
+    <div class="meta">City of Rocky Mount · upgrade lead, hands-on with one analyst · Dec 2024 – Apr 2025 · delivered</div>
+    <p class="short">Payroll-critical upgrade of the City's time-and-attendance system, a separate
+    Tyler product that integrates with the MUNIS ERP. Requirements across Accounting, Payroll,
+    and HR; configuration; data integration with MUNIS; rollout documentation; adoption
+    monitoring after go-live.</p>
+    <div class="stackline">System configuration · data integration · cross-department delivery</div>
+  </article>
+</section>
+
+<section class="wrap" id="note">
+  <h2>Engineering note</h2>
+  <div class="note">
+    <h3>How CRM Central onboards an employee who doesn't exist yet</h3>
+    <div class="meta">Django · Zendesk API · Power Automate · SQL Server</div>
+    <p><b>The problem.</b> Sometimes an access request targets a brand-new employee who has no
+    account in any system — no ERP record, no CIS account, not even Active Directory or email.
+    The request can't proceed, but it also shouldn't be rejected: IT just needs to provision
+    the basics first. In the old email world, these requests stalled in someone's inbox.</p>
+    <p><b>The design.</b> On submission, the application checks both source systems for the
+    employee. If neither has them, the request is parked in an <b>awaiting-prerequisites</b>
+    state and the app creates a Zendesk ticket through the API — addressed to helpdesk, with
+    custom fields for the AD username and email they'll provision. When helpdesk resolves the
+    ticket, Power Automate writes the result into an event table in the application's database.
+    A scheduled, idempotent job processes new events: it attaches the provisioned credentials
+    to the request, advances it into the normal approval workflow, and notifies the requestor
+    and first approvers. No message queue, no polling of external APIs — each system writes to
+    a seam the next one reads.</p>
+    <div class="diagram" role="img" aria-label="Prerequisite pipeline: request checks source systems; if the employee is missing, it parks, a Zendesk ticket is created, helpdesk provisions, Power Automate writes an event, and a scheduled job resumes the workflow.">
+      <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="pr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#5C6670"/>
+          </marker>
+        </defs>
+        <!-- row 1 -->
+        <rect x="15" y="20" width="130" height="46" rx="8" fill="#E4EFEB" stroke="#2F6F5E" stroke-width="1.5"/>
+        <text x="80" y="40" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">Request submitted</text>
+        <text x="80" y="56" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">for an employee</text>
+
+        <rect x="195" y="20" width="140" height="46" rx="8" fill="#fff" stroke="#E4E6E6"/>
+        <text x="265" y="40" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">Account check</text>
+        <text x="265" y="56" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">MUNIS? CIS?</text>
+        <line x1="145" y1="43" x2="193" y2="43" stroke="#5C6670" stroke-width="1.2" marker-end="url(#pr)"/>
+
+        <rect x="470" y="20" width="150" height="46" rx="8" fill="#E4EFEB" stroke="#2F6F5E" stroke-width="1.5"/>
+        <text x="545" y="40" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">Approval workflow</text>
+        <text x="545" y="56" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">normal path</text>
+        <line x1="335" y1="43" x2="468" y2="43" stroke="#5C6670" stroke-width="1.2" marker-end="url(#pr)"/>
+        <text x="400" y="34" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#2F6F5E">accounts exist</text>
+
+        <!-- drop to row 2 -->
+        <line x1="265" y1="66" x2="265" y2="118" stroke="#5C6670" stroke-width="1.2" marker-end="url(#pr)"/>
+        <text x="278" y="96" font-family="Inter,sans-serif" font-size="11" fill="#B5502F">no accounts</text>
+
+        <!-- row 2 -->
+        <rect x="15" y="120" width="150" height="46" rx="8" fill="#FBF3DC" stroke="#E4E6E6"/>
+        <text x="90" y="140" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">Request parked</text>
+        <text x="90" y="156" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">awaiting prerequisites</text>
+
+        <rect x="195" y="120" width="140" height="46" rx="8" fill="#fff" stroke="#E4E6E6"/>
+        <text x="265" y="140" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">Zendesk ticket</text>
+        <text x="265" y="156" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">created via API</text>
+        <line x1="193" y1="143" x2="167" y2="143" stroke="#5C6670" stroke-width="1.2" marker-end="url(#pr)"/>
+
+        <rect x="470" y="120" width="150" height="46" rx="8" fill="#fff" stroke="#E4E6E6"/>
+        <text x="545" y="140" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">Helpdesk provisions</text>
+        <text x="545" y="156" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">AD account + email</text>
+        <line x1="335" y1="143" x2="468" y2="143" stroke="#5C6670" stroke-width="1.2" marker-end="url(#pr)"/>
+
+        <!-- drop to row 3 -->
+        <line x1="545" y1="166" x2="545" y2="218" stroke="#5C6670" stroke-width="1.2" marker-end="url(#pr)"/>
+
+        <!-- row 3 -->
+        <rect x="470" y="220" width="150" height="46" rx="8" fill="#fff" stroke="#E4E6E6"/>
+        <text x="545" y="240" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">Power Automate</text>
+        <text x="545" y="256" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">writes event row</text>
+
+        <rect x="240" y="220" width="160" height="46" rx="8" fill="#fff" stroke="#E4E6E6"/>
+        <text x="320" y="240" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#181C22">Scheduled job</text>
+        <text x="320" y="256" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#5C6670">idempotent · resumes</text>
+        <line x1="468" y1="243" x2="402" y2="243" stroke="#5C6670" stroke-width="1.2" marker-end="url(#pr)"/>
+
+        <!-- resume up to workflow -->
+        <path d="M 320 220 C 320 190, 420 100, 500 68" fill="none" stroke="#2F6F5E" stroke-width="1.5" marker-end="url(#pr)"/>
+        <text x="368" y="180" font-family="Inter,sans-serif" font-size="11" fill="#2F6F5E">credentials attached · workflow resumes</text>
+      </svg>
+      <div class="cap">The prerequisite pipeline: each system writes to a seam the next one reads — no message queue.</div>
+    </div>
+
+    <p><b>The architecture rules underneath.</b> The source systems are never written to: both
+    the ERP and CIS databases are wired read-only at the database-router level, so a bug can't
+    corrupt a system of record. All writes go to the application's own database, every state
+    change is audit-logged, external reads are cached, and workflows are snapshotted at
+    submission — so a request is judged by the rules that existed when it was filed, not the
+    rules of today.</p>
+    <p><b>Why it matters.</b> The pattern — detect the gap, park the work, delegate to the
+    team that owns it, resume automatically on completion — turned the worst class of stalled
+    request into the smoothest one.</p>
+  </div>
+</section>
+
+<section class="wrap" id="personal">
+  <h2>Personal projects &amp; interests</h2>
+  <p class="lead">Things I build and study outside work — some running, some on the back burner,
+  all pointing the same direction: systems, data, and how they model the real world.</p>
+  <div class="pgrid">
+    <div class="pcard">
+      <h4>Home lab</h4>
+      <p>A Proxmox server I run at home for virtualization, self-hosted services, and testing
+      before anything reaches a production environment. Where most of the experimenting happens.</p>
+      <div class="ptags"><span>Proxmox</span><span>Linux</span><span>Docker</span></div>
+    </div>
+    <div class="pcard">
+      <h4>Mandarin learning app</h4>
+      <p><span class="todo">[David: what stage is it at, what makes your approach different, and
+      what you've built so far?]</span> Studying Mandarin myself is what started it.</p>
+      <div class="ptags"><span>Python</span><span>Learning tools</span></div>
+    </div>
+    <div class="pcard">
+      <h4>Graph databases</h4>
+      <p>Exploring Neo4j and graph modeling — relationships between people, systems, and access
+      are naturally a graph, and I want to know that toolset properly.
+      <span class="todo">[David: anything you've actually modeled yet?]</span></p>
+      <div class="ptags"><span>Neo4j</span><span>Cypher</span></div>
+    </div>
+    <div class="pcard">
+      <h4>Simulation &amp; digital twins</h4>
+      <p>Built a digital-twin simulation during an AI for Good residency weekend.
+      <span class="todo">[David: what did the twin model, what was the team's goal, and what
+      did you personally build? Also: what draws you to simulation work?]</span></p>
+      <div class="ptags"><span>Simulation</span><span>Modeling</span><span>AI for Good</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap ops" id="ops">
+  <h2>What I run day to day</h2>
+  <p>Beyond project work, I administer the City's Tyler MUNIS ERP and its integrating
+  products — Cashiering, Citizen Self-Service, Employee Self-Service, and Time &amp; Attendance:
+  provisioning and access control, troubleshooting with and without vendor support, upgrade
+  and year-end close support.</p>
+  <p>I use AI tooling heavily as a development and analysis accelerator — the architecture,
+  validation standards, and decisions are mine; the tooling makes the execution faster.</p>
+  <p>Internal applications run containerized with Docker and are validated in a Proxmox dev/test environment before production.
+  A self-hosted LLM inference server (Ollama), co-built with a colleague, powers AI features
+  in internal apps while keeping municipal data on-premises.</p>
+</section>
+
+<footer class="wrap" id="contact">
+  <h2>Contact</h2>
+  <div class="contact"><a href="mailto:davidbolivar56@gmail.com">davidbolivar56@gmail.com</a></div>
+  <div class="links">
+    <a href="https://linkedin.com/in/bolivar13">LinkedIn</a>
+    <!-- Add when profile is ready: <a href="https://github.com/HANDLE">GitHub</a> -->
+  </div>
+  <p class="fine">Employer data is confidential. Case studies describe mechanisms and outcomes;
+  screenshots and clips use redacted or synthetic data from a development environment.</p>
+</footer>
+
+<script>
+(function(){
+  var el = document.querySelector('.hero h1 .accent');
+  if(!el) return;
+  var PHRASES = [
+    "see their own data.",
+    "make data-driven decisions.",
+    "streamline manual processes.",
+    "govern access with confidence."
+  ];
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    el.textContent = PHRASES[0]; return;
+  }
+  var h1 = el.closest('h1');
+  h1.style.minHeight = h1.offsetHeight + 'px';
+  el.textContent = '';
+  el.classList.add('typing');
+  var TYPE = 55, ERASE = 26, HOLD = 3400, GAP = 400, p = 0;
+  function type(i){
+    var full = PHRASES[p];
+    if(i <= full.length){
+      el.textContent = full.slice(0, i);
+      setTimeout(function(){ type(i+1); }, TYPE);
+    } else { setTimeout(erase, HOLD); }
+  }
+  function erase(){
+    var t = el.textContent;
+    if(t.length){
+      el.textContent = t.slice(0, -1);
+      setTimeout(erase, ERASE);
+    } else {
+      p = (p + 1) % PHRASES.length;
+      setTimeout(function(){ type(0); }, GAP);
+    }
+  }
+  type(0);
+})();
+</script>
+<script>
+(function(){
+  var root = document.getElementById('bi-carousel');
+  if(!root) return;
+  var slides = root.querySelectorAll('.cslide');
+  var dots = root.querySelectorAll('.cdot');
+  var i = 0, timer;
+  var INTERVAL = 4000;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function show(n){
+    slides[i].classList.remove('active');
+    dots[i].classList.remove('active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('active');
+    dots[i].classList.add('active');
+  }
+  function next(){ show(i + 1); }
+  function start(){ if(!reduce){ timer = setInterval(next, INTERVAL); } }
+  function stop(){ clearInterval(timer); }
+
+  dots.forEach(function(d){
+    d.addEventListener('click', function(){
+      stop(); show(parseInt(d.dataset.i, 10)); start();
+    });
+  });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+
+  start();
+})();
+</script>
+</body>
+</html>
