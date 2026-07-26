@@ -39,7 +39,7 @@
 </div>
 
 <header style="max-width:1020px;margin:0 auto;padding:52px 28px 0">
-  <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em;font-size:clamp(1.95rem,4.3vw,2.85rem);line-height:1.18;max-width:100%">I use data to solve real problems, and turn them into <span ref="{{ typeRef }}" style="color:#2F6F5E;display:inline-block;min-height:1.18em" style-after="content:'';display:inline-block;width:2px;height:.95em;background:#2F6F5E;margin-left:3px;vertical-align:-.12em;animation:blink 1s step-end infinite">hours given back.</span></h1>
+  <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em;font-size:clamp(1.95rem,4.3vw,2.85rem);line-height:1.18;max-width:100%">I use data to solve real problems, and turn them into <span ref="{{ typeRef }}" style="color:#2F6F5E" style-after="content:'';display:inline-block;width:2px;height:.95em;background:#2F6F5E;margin-left:3px;vertical-align:-.12em;animation:blink 1s step-end infinite">hours given back.</span></h1>
 
   <div style="display:grid;grid-template-columns:1fr;gap:26px;margin-top:24px">
     <p style="color: #5C6670; max-width: 100%; font-size: 1.1rem; line-height: 1.7">Systems analyst and applications developer. Most of my career has been inside local government — administering core systems and building the reporting, applications, and integrations around them — but what I actually do is pick up the puzzle nobody else wanted: the undocumented catalog, the process still run by hand, the two systems that refuse to talk to each other. Data is how I take them apart. SQL, pipelines, and reporting that let an organization see itself and decide on evidence instead of instinct — manage funds better, collect better, spend less on the work and more on the service. I'm curious to the point of building: self-hosted AI and on-prem inference, custom applications, vendor collaboration, whatever integration the problem actually needs. Validating data before I trust it and building the pipeline a decision rests on is already most of my week, which is why data engineering is the direction I'm heading. I'm after real problems, new things to learn, and people to build them with.</p>
@@ -550,17 +550,13 @@ class Component extends DCLogic {
     if (this.onResize) window.removeEventListener('resize', this.onResize);
   }
 
-  pinHeight(){
+  syncHeight(){
     const el = this.typeRef.current;
     if (!el) return;
     const h1 = el.closest('h1');
     if (!h1) return;
-    const keep = el.textContent;
-    h1.style.minHeight = '0px';
-    let max = 0;
-    this.PHRASES.forEach(t => { el.textContent = t; max = Math.max(max, h1.offsetHeight); });
-    el.textContent = keep;
-    h1.style.minHeight = max + 'px';
+    h1.style.transition = 'min-height .18s ease';
+    h1.style.minHeight = h1.scrollHeight + 'px';
   }
 
   startTyping(){
@@ -569,8 +565,8 @@ class Component extends DCLogic {
     const P = this.PHRASES;
     let p = 0;
     const TYPE = 55, ERASE = 26, HOLD = 3400, GAP = 400;
-    this.pinHeight();
-    this.onResize = () => { clearTimeout(this.rt); this.rt = setTimeout(() => this.pinHeight(), 150); };
+    this.syncHeight();
+    this.onResize = () => { clearTimeout(this.rt); this.rt = setTimeout(() => this.syncHeight(), 150); };
     window.addEventListener('resize', this.onResize);
     el.textContent = '';
     const type = (i) => {
@@ -578,6 +574,7 @@ class Component extends DCLogic {
       const full = P[p];
       if (i <= full.length){
         this.typeRef.current.textContent = full.slice(0, i);
+        this.syncHeight();
         this.tt = setTimeout(() => type(i + 1), TYPE);
       } else {
         this.tt = setTimeout(erase, HOLD);
@@ -588,6 +585,7 @@ class Component extends DCLogic {
       const t = this.typeRef.current.textContent;
       if (t.length){
         this.typeRef.current.textContent = t.slice(0, -1);
+        this.syncHeight();
         this.tt = setTimeout(erase, ERASE);
       } else {
         p = (p + 1) % P.length;
