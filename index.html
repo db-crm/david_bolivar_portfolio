@@ -8,8 +8,9 @@
 <body>
 <x-dc>
 <helmet>
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#2F6F5E"/><text x="200" y="160" font-family="sans-serif" font-size="72" font-weight="700" fill="#FCFCFB" text-anchor="middle">DB</text></svg></template>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#2F6F5E"></rect><text x="200" y="160" font-family="sans-serif" font-size="72" font-weight="700" fill="#FCFCFB" text-anchor="middle">DB</text></svg></template>
 <meta name="description" content="Systems analyst and applications developer. I build systems that let organizations see their own data — and verify everything against an independent source.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F6F5E'/%3E%3Ctext x='32' y='43' font-family='Space Grotesk,sans-serif' font-size='28' font-weight='700' fill='%23FCFCFB' text-anchor='middle'%3EDB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
@@ -42,7 +43,12 @@
   <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em;font-size:clamp(1.95rem,4.3vw,2.85rem);line-height:1.18;max-width:100%">I use data to solve real problems, and turn them into <span ref="{{ typeRef }}" style="color:#2F6F5E" style-after="content:'';display:inline-block;width:2px;height:.95em;background:#2F6F5E;margin-left:3px;vertical-align:-.12em;animation:blink 1s step-end infinite">hours given back.</span></h1>
 
   <div style="display:grid;grid-template-columns:1fr;gap:26px;margin-top:24px">
-    <p style="color: #5C6670; max-width: 100%; font-size: 1.1rem; line-height: 1.7">Systems analyst and applications developer. Most of my career has been inside local government — administering core systems and building the reporting, applications, and integrations around them — but what I actually do is pick up the puzzle nobody else wanted: the undocumented catalog, the process still run by hand, the two systems that refuse to talk to each other. Data is how I take them apart. SQL, pipelines, and reporting that let an organization see itself and decide on evidence instead of instinct — manage funds better, collect better, spend less on the work and more on the service. I'm curious to the point of building: self-hosted AI and on-prem inference, custom applications, vendor collaboration, whatever integration the problem actually needs. Validating data before I trust it and building the pipeline a decision rests on is already most of my week, which is why data engineering is the direction I'm heading. I'm after real problems, new things to learn, and people to build them with.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5C6670">
+      <span style="color:#2F6F5E">Systems analyst and applications developer</span>
+      <span style="width:1px;height:12px;background:#E4E6E6"></span>
+      <span>Currently based in the USA · open to relocation, remote, or hybrid</span>
+    </div>
+    <p style="color:#5C6670;max-width:100%;font-size:1.1rem;line-height:1.7">I'm drawn to the problems that stayed unsolved because they were tedious, undocumented, or nobody owned them. Most of my work has been in local government — the systems a city actually runs on — where fixing one of those means staff hours go back into serving people instead of into paperwork, and a department can finally see its own numbers. <b style="font-weight: 600; color: rgb(24, 28, 34);">I build the whole path:</b> SQL and pipelines to get the data honest, applications and integrations to put it to work, dashboards so the decision rests on evidence instead of instinct. I don't trust data until I've checked it against an independent source. Data engineering is at the core of&nbsp;what I do.</p>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px">
       <div style="background:#FCFCFB;border:1px solid #E4E6E6;border-radius:10px;padding:16px 18px">
@@ -83,11 +89,56 @@
 
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:14px;align-items:start">
 
-    <article data-screen-label="CRM Central" style="grid-column:{{ spanCrm }};background:#FFFFFF;border:1px solid #E4E6E6;border-radius:12px;overflow:hidden">
-      <button onClick="{{ toggleCrm }}" style="display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px" style-hover="background:#F5F5F3">
+    <article data-screen-label="Outreach automation" style="grid-column:{{ spanOutreach }};background:#FFFFFF;border:1px solid #E4E6E6;border-radius:12px;overflow:hidden">
+      <button onClick="{{ toggleOutreach }}" style="display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px" style-hover="background:#F5F5F3">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
           <div>
             <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#2F6F5E">01</span>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;line-height:1.35;letter-spacing:-.01em;margin-top:6px">APS Outreach Console: turning manual admissions outreach into an auditable pipeline</h3>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:1.1rem;color:#2F6F5E;line-height:1;padding-top:4px">{{ signOutreach }}</span>
+        </div>
+        <p style="color:#5C6670;font-size:.97rem;margin-top:10px;max-width:60ch;text-wrap:pretty">Browser automation fills the student CRM's send form and reads its own interaction history, with a human required to click Send every time.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#5C6670;padding-right:8px;border-right:1px solid #E4E6E6">Sole developer</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;background:#F5F5F3;padding:3px 9px;border-radius:100px">In production, no IT/database access</span>
+        </div>
+      </button>
+      <sc-if value="{{ openOutreach }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:4px 24px 26px;border-top:1px solid #E4E6E6">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5C6670;margin:18px 0 14px">University admissions office · sole developer · 2025 – present · local-first tool, in production</div>
+          <div style="display:grid;grid-template-columns:1fr;gap:7px;background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;padding:15px 17px;margin-bottom:18px">
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Problem</span><span style="font-size:.92rem;line-height:1.5">Hundreds of prospective students emailed one at a time through a CRM with no bulk send at staff permission level.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Built</span><span style="font-size:.92rem;line-height:1.5">A local Flask + Selenium console that fills the form, reads interaction history, and tracks every send — while a human still clicks Send.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Result</span><span style="font-size:.92rem;line-height:1.5">Manages 250+ active students in production; follow-ups self-schedule instead of living in someone’s memory.</span></div>
+          </div>
+          <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Problem.</b> As a graduate assistant in admissions, I emailed hundreds of prospective students through the school's student CRM (Jenzabar One), which has no bulk-send capability at the staff permission level. Every email meant manually looking up a student, checking whether a colleague had already reached out, picking the right template, and filling a form — for a roster in the hundreds, updated weekly, where double-contacting or missing someone had real institutional consequences.</p>
+          <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Build.</b> A local web app (Flask + Selenium) that sits alongside an authenticated browser session and handles the tedious 90%, with a human required for the one step that matters. <b style="font-weight:700">Fills</b> resolves the right template per student — by program, stage, or a multi-step campaign sequence — and populates the CRM's form for the person to review and send; the app never sends on its own. <b style="font-weight:700">Scans</b> reads each student's real interaction history from the CRM's internal REST API to classify them safe to contact, in cooldown, flagged by a colleague's notes, or on a do-not-contact list, so outreach never collides with a teammate's recent work. <b style="font-weight:700">Tracks &amp; reports</b> — a live dashboard, Excel exports with native charts, and PDF snapshots, all driven from one source of truth: the send log.</p>
+          <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">How it works.</b> The app attaches to an already-logged-in Chrome session via remote debugging, so it never touches credentials or MFA. From there it drives Selenium for form-filling — keyboard-based selection to dodge overlay/duplicate-match issues, direct TinyMCE API injection for the rich-text body — and the CRM's own internal AJAX endpoints, reverse-engineered from DevTools, for fast interaction-history reads, including anti-forgery tokens minted fresh per session. State lives in a small set of JSON files plus a CSV roster, behind a single lock so Flask routes and the Selenium engine never race. Campaign progress is derived — never separately stored — from tags embedded in the send log itself, so there's exactly one source of truth to ever get out of sync.</p>
+          <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Notable engineering.</b> The student CRM's internal REST endpoints are undocumented and picky — the server silently rejects requests whose shape is off by even a small detail, so I reverse-engineered the exact format from DevTools. The send log's schema changed mid-project; the log reader had to handle both versions without touching old records. Bounce detection reconciles the CRM's inbox against the send log by timestamp, with cooldown-suppression so a bounce doesn't block a legitimate retry. I tested everything against real production data using disposable copies, never the live files, backed by a 65-test pytest suite.</p>
+          <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Outcome.</b> Manages 250+ active students across concurrent recruiting cohorts, replacing a fully manual, error-prone process with one that self-schedules follow-ups, surfaces institutional knowledge automatically, and gives leadership a reporting layer that didn't exist before — all while preserving a hard human-approval boundary on every email sent.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:18px 0 8px">
+            <div style="background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;padding:14px 16px"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.15rem;color:#2F6F5E">250+</div><div style="font-size:.8rem;color:#5C6670;margin-top:3px;line-height:1.45">active students managed across concurrent cohorts</div></div>
+            <div style="background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;padding:14px 16px"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.15rem;color:#2F6F5E">0</div><div style="font-size:.8rem;color:#5C6670;margin-top:3px;line-height:1.45">automatic sends — a human clicks Send every time</div></div>
+            <div style="background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;padding:14px 16px"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.15rem;color:#2F6F5E">65</div><div style="font-size:.8rem;color:#5C6670;margin-top:3px;line-height:1.45">pytest tests covering the pure logic end to end</div></div>
+          </div>
+          <div style="margin:18px 0 4px">
+            <div onClick="{{ openLightboxOutreach }}" style="position:relative;aspect-ratio:16/9;background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;overflow:hidden;cursor:zoom-in" style-hover="border-color:#2F6F5E">
+              <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata" aria-label="Outreach dashboard" style="width:100%;height:100%;object-fit:cover;display:block">
+                <source src="media/outreach-dashboard.mp4" type="video/mp4">
+              </video>
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s ease;background:rgba(24,28,34,.28)" data-zoom-cue="1" style-hover="opacity:1"><span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#fff;background:rgba(24,28,34,.6);padding:6px 12px;border-radius:100px">Click to enlarge</span></div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5C6670;margin-top:8px">Outreach dashboard. Synthetic student data.</div>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5C6670;margin-top:14px">Python · Flask · Selenium · vanilla JS/HTML/CSS · openpyxl · pytest</div>
+        </div>
+      </sc-if>
+    </article><article data-screen-label="CRM Central" style="grid-column:{{ spanCrm }};background:#FFFFFF;border:1px solid #E4E6E6;border-radius:12px;overflow:hidden">
+      <button onClick="{{ toggleCrm }}" style="display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px" style-hover="background:#F5F5F3">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+          <div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#2F6F5E">02</span>
             <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;line-height:1.35;letter-spacing:-.01em;margin-top:6px">CRM Central: access governance for the City's core systems</h3>
           </div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:1.1rem;color:#2F6F5E;line-height:1;padding-top:4px">{{ signCrm }}</span>
@@ -101,6 +152,11 @@
       <sc-if value="{{ openCrm }}" hint-placeholder-val="{{ false }}">
         <div style="padding:4px 24px 26px;border-top:1px solid #E4E6E6;margin-top:0">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5C6670;margin:18px 0 14px">City of Rocky Mount · sole developer · 2024 – present · feature-complete, pre-production</div>
+          <div style="display:grid;grid-template-columns:1fr;gap:7px;background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;padding:15px 17px;margin-bottom:18px">
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Problem</span><span style="font-size:.92rem;line-height:1.5">ERP access was requested by DocuSign envelope; nobody could see what access anyone already had.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Built</span><span style="font-size:.92rem;line-height:1.5">A Django access-governance app: live read-only visibility, structured request wizards, four-stage approvals, append-only audit trail.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Result</span><span style="font-size:.92rem;line-height:1.5">The first automated account scan found seven former employees still holding active ERP accounts.</span></div>
+          </div>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Problem.</b> Access to the City's two Tyler ERPs — MUNIS and CIS Infinity — was requested through DocuSign envelopes and free-text PDF forms. Nobody could see what access an employee already had, requests were ambiguous because roles were typed rather than picked, audit records were fragmented across envelopes, and nothing tracked the lifecycle end to end. There was no deprovisioning trigger at all: the application's first automated account scan found seven former employees still holding active ERP accounts.</p>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Build.</b> A Django 5 application giving directors live read-only visibility into their employees' real MUNIS and CIS access, structured request wizards that pick from the actual role catalogs, and a four-stage approval workflow (director → analyst → PM supervisor → implementation). Requests are snapshotted at submission, so in-flight approvals are immune to later admin changes — approvers always see exactly what was submitted. Zendesk tickets are created automatically, and new-hire requests park until IT provisions the AD account, then resume on their own. Every state change lands in an append-only audit log rendered as a per-request timeline: the compliance artifact that replaces the DocuSign envelope.</p>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Engineering decisions.</b> Boring on purpose — no SPA, no Celery, no Redis. Asynchronous work runs on database-as-queue patterns instead: a transactional email outbox (which removed roughly 15 seconds of latency per submission that synchronous SMTP had been adding) and an event-relay table drained by a single worker using compare-and-swap claiming with retries and failure auditing. Row locks and idempotency guards closed real races a security audit surfaced — double approvals creating duplicate tickets, events reprocessing. That audit also drove fixes for an IDOR flaw, stored XSS coming in through ERP strings, and secrets hygiene. Integrations have zero inbound HTTP surface: Power Automate writes to a database table rather than calling a webhook. And because CIS runs on SQL Server 2014, which negotiates only TLS 1.0 and 1.1, the connection required FreeTDS with a documented OpenSSL security-level adjustment — modern ODBC drivers simply refuse the handshake.</p>
@@ -211,7 +267,7 @@
       <button onClick="{{ toggleRbac }}" style="display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px" style-hover="background:#F5F5F3">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
           <div>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#2F6F5E">02</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#2F6F5E">03</span>
             <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;line-height:1.35;letter-spacing:-.01em;margin-top:6px">Redesigning 560 undocumented security roles, with proof nothing was lost</h3>
           </div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:1.1rem;color:#2F6F5E;line-height:1;padding-top:4px">{{ signRbac }}</span>
@@ -225,6 +281,11 @@
       <sc-if value="{{ openRbac }}" hint-placeholder-val="{{ false }}">
         <div style="padding:4px 24px 26px;border-top:1px solid #E4E6E6">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5C6670;margin:18px 0 14px">City of Rocky Mount · sole analyst / developer · 2026 · analysis complete, migration pending</div>
+          <div style="display:grid;grid-template-columns:1fr;gap:7px;background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;padding:15px 17px;margin-bottom:18px">
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Problem</span><span style="font-size:.92rem;line-height:1.5">560 MUNIS security roles, never documented, with no catalog-wide way to inspect them.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Built</span><span style="font-size:.92rem;line-height:1.5">Parsed a 3,045-page vendor report into a validated dataset, then derived a 442-role catalog from the data.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Result</span><span style="font-size:.92rem;line-height:1.5">Zero capability or scope loss across all 235 users — computed, then independently re-verified.</span></div>
+          </div>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Problem.</b> A supervisor review concluded that MUNIS's security roles had to be overhauled before CRM Central could go live — governing access is meaningless if the underlying roles are incoherent. The catalog had never been documented, and while MUNIS can display any single role's grants on its Roles screen, there is no catalog-wide view: permissions are stored per module across the database, and inspecting 560 roles one screen at a time is not analysis. Nobody had tackled it because there was no dataset to tackle it with.</p>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Building the dataset.</b> The system's only complete self-description is its per-role report — 3,045 pages of PDF when exported for every role. Standard text extraction silently corrupted column alignment, so I parsed it on word coordinates instead (pdfplumber clustering), producing a validated four-table dataset: 560 roles, 87,863 permission grants, 11,641 data-access settings, 6,511 user assignments — every page attributed, zero unmatched lines. An independently written recount script — deliberately re-deriving totals from the raw extraction rather than trusting my pipeline's intermediates — caught a real parser bug where a page-break header quirk was silently dropping about 37,000 permission rows. That check existed because the analysis was worthless if the extraction was quietly wrong.</p>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">What the data showed.</b> 27% of roles (153) granted access to nobody active. 121 roles were held by exactly one person. 65% of all assignments belonged to disabled accounts. Roughly 300 roles turned out to be data-scope variants of a handful of templates, clustering into 43 near-duplicate families. Some roles were named after individual people — including one person's private role created twice under different spellings, and a role named after one employee that was actually held by someone else.</p>
@@ -251,7 +312,7 @@
       <button onClick="{{ toggleNexus }}" style="display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px" style-hover="background:#F5F5F3">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
           <div>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#2F6F5E">03</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#2F6F5E">04</span>
             <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;line-height:1.35;letter-spacing:-.01em;margin-top:6px">Nexus: an on-premises AI knowledge base where data never leaves the network</h3>
           </div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:1.1rem;color:#2F6F5E;line-height:1;padding-top:4px">{{ signNexus }}</span>
@@ -264,7 +325,12 @@
       </button>
       <sc-if value="{{ openNexus }}" hint-placeholder-val="{{ false }}">
         <div style="padding:4px 24px 26px;border-top:1px solid #E4E6E6">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5C6670;margin:18px 0 14px">City of Rocky Mount · co-built with a colleague · 2026 · core pipeline built and tested</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5C6670;margin:18px 0 14px">City of Rocky Mount · sole developer · 2026 · core pipeline built and tested</div>
+          <div style="display:grid;grid-template-columns:1fr;gap:7px;background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;padding:15px 17px;margin-bottom:18px">
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Problem</span><span style="font-size:.92rem;line-height:1.5">Department knowledge lived in people’s heads; SaaS tools were off the table because the content includes credentials and PII.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Built</span><span style="font-size:.92rem;line-height:1.5">An on-prem knowledge base where a locally hosted model drafts articles and a human approves every one before publishing.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Result</span><span style="font-size:.92rem;line-height:1.5">Full capture-to-publish pipeline working for four article types; 0 bytes leave the network.</span></div>
+          </div>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Problem.</b> Technology Services runs on tribal knowledge — fixes, procedures, vendor records, and policy live in people's heads, scattered notes, and OneNote. When someone is out or leaves, the knowledge leaves with them, and the same problems get re-solved from scratch. SaaS knowledge tools were never an option: the content includes credentials, contracts, and PII that can't be sent to a third-party cloud or LLM API.</p>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Build.</b> Staff fill in a short structured capture form — one of four article types (Troubleshooting, SOP, Reference Record, Policy) — and a locally hosted model, Qwen3 14B on Ollama, drafts a well-structured article from it. Nothing publishes automatically: a human reviews and approves every draft in a three-column review interface before it goes live. Each article type is defined by exactly three artifacts — a capture form, a prompt, and a render template — so a new type is configuration, not a pipeline change.</p>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Permission enforcement.</b> RBAC with four roles and a division model on top; every article carries public, division, or private visibility plus explicit per-user grants. The entire application reads through one gateway function, <code style="font-family:'IBM Plex Mono',monospace;background:#F5F5F3;padding:1px 6px;border-radius:4px;font-size:.88em">get_allowed_articles(user)</code> — raw model access is banned by convention — so the same permission logic governs browsing, search, and, later, RAG retrieval. Unauthorized access returns 404, not 403, so the app never reveals that restricted content exists.</p>
@@ -293,7 +359,7 @@
       <button onClick="{{ toggleFlood }}" style="display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px" style-hover="background:#F5F5F3">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
           <div>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#2F6F5E">04</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#2F6F5E">05</span>
             <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;line-height:1.35;letter-spacing:-.01em;margin-top:6px">FloodReady ENC: routing outreach teams to the highest-priority doors before landfall</h3>
           </div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:1.1rem;color:#2F6F5E;line-height:1;padding-top:4px">{{ signFlood }}</span>
@@ -307,6 +373,11 @@
       <sc-if value="{{ openFlood }}" hint-placeholder-val="{{ false }}">
         <div style="padding:4px 24px 26px;border-top:1px solid #E4E6E6">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5C6670;margin:18px 0 14px">MBA coursework, taken further than the assignment required · sole developer · two NC counties · digital twin working, model and routing on the funded roadmap</div>
+          <div style="display:grid;grid-template-columns:1fr;gap:7px;background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;padding:15px 17px;margin-bottom:18px">
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Problem</span><span style="font-size:.92rem;line-height:1.5">Storm outreach teams have limited hours and no way to rank which doors matter most.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Built</span><span style="font-size:.92rem;line-height:1.5">A Priority Outreach Index from FEMA claims and CDC vulnerability data, plus a digital twin that races it against a static canvassing plan.</span></div>
+            <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:#2F6F5E;min-width:52px">Result</span><span style="font-size:.92rem;line-height:1.5">1.1×–3.6× more top-priority households reached per travel minute at realistic capacity.</span></div>
+          </div>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Problem.</b> When a storm is inbound, county outreach teams have limited hours and no way to rank which doors matter most. Knocking in map order treats every household as equally at risk.</p>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Build.</b> FloodReady ENC predicts flood-damage severity per census tract from historical FEMA NFIP claims, weights it by the CDC Social Vulnerability Index into a <b style="font-weight:700">Priority Outreach Index</b>, and routes county outreach teams to the highest-priority doors before landfall. I built an interactive digital twin that compares a static canvassing plan against the FloodReady plan — same storm, same teams, different routing.</p>
           <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Data foundation.</b> 1,530 NFIP claims (1978–2025) across two NC counties, and CDC/ATSDR SVI 2022 for all 39 tracts. Real data, not synthetic.</p>
@@ -332,40 +403,7 @@
       </sc-if>
     </article>
 
-    <article data-screen-label="Outreach automation" style="grid-column:{{ spanOutreach }};background:#FFFFFF;border:1px solid #E4E6E6;border-radius:12px;overflow:hidden">
-      <button onClick="{{ toggleOutreach }}" style="display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 24px" style-hover="background:#F5F5F3">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
-          <div>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#2F6F5E">05</span>
-            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;line-height:1.35;letter-spacing:-.01em;margin-top:6px">Outreach automation for a student information system with no API</h3>
-          </div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:1.1rem;color:#2F6F5E;line-height:1;padding-top:4px">{{ signOutreach }}</span>
-        </div>
-        <p style="color:#5C6670;font-size:.97rem;margin-top:10px;max-width:60ch;text-wrap:pretty">Browser automation logs every student contact where no API exists, and a dashboard decides who to reach next.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#5C6670;padding-right:8px;border-right:1px solid #E4E6E6">Sole developer</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;background:#F5F5F3;padding:3px 9px;border-radius:100px">Personal tool, runs locally</span>
-        </div>
-      </button>
-      <sc-if value="{{ openOutreach }}" hint-placeholder-val="{{ false }}">
-        <div style="padding:4px 24px 26px;border-top:1px solid #E4E6E6">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5C6670;margin:18px 0 14px">NC Wesleyan University · sole developer · 2025 – present · personal tool, runs locally on my PC</div>
-          <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Problem.</b> Advising staff logged every student contact into Jenzabar J1 by hand — slow, error-prone, and impossible to prioritize across hundreds of students.</p>
-          <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Build.</b> A Selenium/Flask tool that records communications into J1 automatically (browser automation where no API exists), plus scan logic with cooldown, flag, and do-not-contact rules, and a dashboard staff use to decide who to reach next.</p>
-          <p style="margin-bottom:10px;max-width:70ch"><b style="font-weight:700">Outcome.</b> I built it for myself to streamline my own advising workflow, and run it locally on my PC. Logging that consumed staff hours now happens automatically; outreach priorities come from the dashboard instead of memory.</p>
-          <div style="margin:18px 0 4px">
-            <div onClick="{{ openLightboxOutreach }}" style="position:relative;aspect-ratio:16/9;background:#F5F5F3;border:1px solid #E4E6E6;border-radius:8px;overflow:hidden;cursor:zoom-in" style-hover="border-color:#2F6F5E">
-              <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata" aria-label="Outreach dashboard" style="width:100%;height:100%;object-fit:cover;display:block">
-                <source src="media/outreach-dashboard.mp4" type="video/mp4">
-              </video>
-              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s ease;background:rgba(24,28,34,.28)" data-zoom-cue="1" style-hover="opacity:1"><span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#fff;background:rgba(24,28,34,.6);padding:6px 12px;border-radius:100px">Click to enlarge</span></div>
-            </div>
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5C6670;margin-top:8px">Outreach dashboard. Synthetic student data.</div>
-          </div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5C6670;margin-top:14px">Python · Selenium · Flask · J1 Web<br></div>
-        </div>
-      </sc-if>
-    </article>
+    
 
   </div>
 </section>
@@ -413,12 +451,12 @@
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px">
     <div>
       <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;letter-spacing:-.01em">Public-safety API integrations</h3>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#5C6670;margin:6px 0 8px">City of Rocky Mount · integration lead · Nov 2024 – Feb 2025 · delivered</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#5C6670;margin:6px 0 8px">Integration lead · Nov 2024 – Feb 2025 · delivered</div>
       <p style="color:#5C6670;font-size:.94rem;max-width:60ch">Led REST API integration work connecting the City's computer-aided dispatch and records-management systems with third-party platforms — police body-worn cameras, citizen-feedback surveys, and predictive patrol deployment. Mapped data models, coordinated vendor requirements, validated the exchanges end to end.</p>
     </div>
     <div>
       <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;letter-spacing:-.01em">Tyler Time &amp; Attendance (ExecuTime) upgrade — 1,200+ employees</h3>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#5C6670;margin:6px 0 8px">City of Rocky Mount · upgrade lead, hands-on with one analyst · Dec 2024 – Apr 2025 · delivered</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:#5C6670;margin:6px 0 8px">Upgrade lead · Dec 2024 – Apr 2025 · delivered</div>
       <p style="color:#5C6670;font-size:.94rem;max-width:60ch">Payroll-critical upgrade of the City's time-and-attendance system, a separate Tyler product that integrates with the MUNIS ERP. Requirements across Accounting, Payroll, and HR; configuration; data integration with MUNIS; rollout documentation; adoption monitoring after go-live.</p>
     </div>
   </div>
@@ -454,19 +492,11 @@
     </div>
     <div style="background:#FFFFFF;border:1px solid #E4E6E6;border-radius:10px;padding:20px 22px">
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
-        <h4 style="font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:600">Mandarin Brain</h4>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:#5C6670;background:#F5F5F3;padding:3px 8px;border-radius:100px;white-space:nowrap">design stage</span>
+        <h4 style="font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:600">Graph modeling</h4>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:#2F6F5E;background:#E4EFEB;padding:3px 8px;border-radius:100px;white-space:nowrap">running</span>
       </div>
-      <p style="font-size:.94rem;color:#5C6670;margin:8px 0 12px">A graph-based Mandarin learning app. Currently design stage: a Neo4j knowledge graph plus PostgreSQL, HSK-structured progression, spaced repetition.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;border:1px solid #E4E6E6;padding:3px 9px;border-radius:100px">Neo4j</span><span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;border:1px solid #E4E6E6;padding:3px 9px;border-radius:100px">PostgreSQL</span><span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;border:1px solid #E4E6E6;padding:3px 9px;border-radius:100px">Spaced repetition</span></div>
-    </div>
-    <div style="background:#FFFFFF;border:1px solid #E4E6E6;border-radius:10px;padding:20px 22px">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
-        <h4 style="font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:600">Graph databases</h4>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:#5C6670;background:#F5F5F3;padding:3px 8px;border-radius:100px;white-space:nowrap">study in progress</span>
-      </div>
-      <p style="font-size:.94rem;color:#5C6670;margin:8px 0 12px">A deliberate study in progress: Neo4j and graph modeling — access, people, and systems are naturally a graph.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;border:1px solid #E4E6E6;padding:3px 9px;border-radius:100px">Neo4j</span><span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;border:1px solid #E4E6E6;padding:3px 9px;border-radius:100px">Cypher</span><span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;border:1px solid #E4E6E6;padding:3px 9px;border-radius:100px">Graph modeling</span></div>
+      <p style="font-size:.94rem;color:#5C6670;margin:8px 0 12px">Access, people, and systems are naturally a graph — the RBAC work made that obvious. I'm learning Neo4j and Cypher against something concrete: Mandarin Brain, a learning app built on a knowledge graph of characters, words, and the relationships between them, with HSK-structured progression and spaced repetition.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;border:1px solid #E4E6E6;padding:3px 9px;border-radius:100px">Neo4j</span><span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;border:1px solid #E4E6E6;padding:3px 9px;border-radius:100px">Cypher</span><span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5C6670;border:1px solid #E4E6E6;padding:3px 9px;border-radius:100px">PostgreSQL</span></div>
     </div>
   </div>
 </section>
@@ -474,6 +504,7 @@
 <footer id="contact" style="max-width:1020px;margin:0 auto;padding:64px 28px 72px;scroll-margin-top:24px">
   <h2 style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#2F6F5E;border-bottom:1px solid #E4E6E6;padding-bottom:10px;margin-bottom:24px">Contact</h2>
   <div style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:600;margin-bottom:12px"><a href="mailto:davidbolivar56@gmail.com">davidbolivar56@gmail.com</a></div>
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:#5C6670;margin-bottom:18px">Based in the USA · open to relocation, remote, or hybrid · systems analysis, applications development, data engineering</div>
   <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:.94rem">
     <a href="{{ resumeUrl }}" download="download" style="color:#5C6670;text-decoration:none" style-hover="color:#2F6F5E">Résumé (PDF)</a>
     <a href="{{ linkedinUrl }}" style="color:#5C6670;text-decoration:none" style-hover="color:#2F6F5E">LinkedIn</a>
