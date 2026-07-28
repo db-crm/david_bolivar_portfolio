@@ -10,7 +10,7 @@
 <helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="#2F6F5E"></rect><text x="200" y="160" font-family="sans-serif" font-size="72" font-weight="700" fill="#FCFCFB" text-anchor="middle">DB</text></svg></template>
 <meta name="description" content="Systems analyst and applications developer. I build systems that let organizations see their own data — and verify everything against an independent source.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232F6F5E'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='30' font-weight='700' fill='%23FCFCFB' text-anchor='middle'%3EDB%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232F6F5E'/%3E%3Ctext x='32' y='45' font-family='Helvetica,Arial,sans-serif' font-size='40' font-weight='700' letter-spacing='-2' fill='%23FCFCFB' text-anchor='middle' textLength='50' lengthAdjust='spacingAndGlyphs'%3EDB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
 </div>
 
 <header style="max-width:1020px;margin:0 auto;padding:52px 28px 0">
-  <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em;font-size:clamp(1.95rem,4.3vw,2.85rem);line-height:1.18;max-width:100%">I use data to solve real problems, and turn them into <span ref="{{ typeRef }}" style="color:#2F6F5E" style-after="content:'';display:inline-block;width:2px;height:.95em;background:#2F6F5E;margin-left:3px;vertical-align:-.12em;animation:blink 1s step-end infinite">hours given back.</span></h1>
+  <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.02em;font-size:clamp(1.95rem,4.3vw,2.85rem);line-height:1.18;max-width:100%">I build pipelines that turn manual, disconnected work into <span ref="{{ typeRef }}" style="color:#2F6F5E" style-after="content:'';display:inline-block;width:2px;height:.95em;background:#2F6F5E;margin-left:3px;vertical-align:-.12em;animation:blink 1s step-end infinite">hours given back.</span></h1>
 
   <div style="display:grid;grid-template-columns:1fr;gap:26px;margin-top:24px">
     <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5C6670">
@@ -48,7 +48,7 @@
       <span style="width:1px;height:12px;background:#E4E6E6"></span>
       <span>Currently based in the USA · open to relocation, remote, or hybrid</span>
     </div>
-    <p style="color:#5C6670;max-width:100%;font-size:1.1rem;line-height:1.7">I'm drawn to the problems that stayed unsolved because they were tedious, undocumented, or nobody owned them. Most of my work has been in local government — the systems a city actually runs on — where fixing one of those means staff hours go back into serving people instead of into paperwork, and a department can finally see its own numbers. <b style="font-weight: 600; color: rgb(24, 28, 34);">I build the whole path:</b> SQL and pipelines to get the data honest, applications and integrations to put it to work, dashboards so the decision rests on evidence instead of instinct. I don't trust data until I've checked it against an independent source. Data engineering is at the core of&nbsp;what I do.</p>
+    <p style="color: #000000; max-width: 100%; font-size: 1.1rem; line-height: 1.7">I'm drawn to the problems that remain unsolved because they're tedious, undocumented, or simply don't belong to anyone. Working in local government has taught me how critical those problems can be. Solving them doesn't just improve a process—it gives staff time back to serve residents, eliminates unnecessary manual work, and helps departments understand their own operations through reliable data. I build the <b>entire data lifecycle:</b> SQL and pipelines that make the data trustworthy, applications and integrations that operationalize it, and dashboards that turn it into actionable insight. Data engineering is the foundation of everything I build.</p>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:10px">
       <div style="background:#FCFCFB;border:1px solid #E4E6E6;border-radius:10px;padding:16px 18px">
@@ -670,7 +670,7 @@ class Component extends DCLogic {
       lightboxCaption: this.state.lightbox ? this.state.lightbox.caption : '',
       resumeUrl: this.props.resumeUrl || 'media/david-bolivar-resume.pdf',
       linkedinUrl: this.props.linkedinUrl || 'https://linkedin.com/in/bolivar13',
-      githubUrl: this.props.githubUrl || 'https://github.com/db-tato',
+      githubUrl: this.props.githubUrl || 'https://github.com/db-crm',
       openCrm: open === 'crm', openRbac: open === 'rbac', openNexus: open === 'nexus',
       openFlood: open === 'flood', openOutreach: open === 'outreach',
       spanCrm: span('crm'), spanRbac: span('rbac'), spanNexus: span('nexus'),
